@@ -1,0 +1,62 @@
+\documentclass{article}
+
+\usepackage[OT4]{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage[left=2cm,right=2cm,top=1.5cm,bottom=2cm,includeheadfoot,a4paper]{geometry}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{marginnote}
+\usepackage{hyperref}
+\usepackage{listings}
+
+\geometry{a4paper}
+\linespread{1.0}
+\frenchspacing
+\renewcommand{\arraystretch}{1.0}
+
+\title{
+	Projektowanie i programowanie obiektowe \\
+	\Huge{Hermetyzacja i enkapsulacja}
+}
+\author{mgr inż. Krzysztof Rewak}
+\date{\today}
+
+\begin{document}
+	\maketitle
+
+	\section{Hermetyzacja w programowaniu obiektowym}	
+	Należy uruchomić w dowolnym środowisku załączony program z pliku \texttt{lab04.*}. Programy w obu językach wykonują dokładnie to samo zadanie: tworzą instancję prostej pseudogry planszowej i przeprowadzają jedną rozgrywkę.
+	
+	Należy przeanalizować kod, a następnie odpowiedzieć na pytania:
+	\begin{itemize}
+		\item jakie są zasady gry?
+		\item czym jest metoda statyczna?
+		\item czym jest pętla \texttt{foreach()} w PHP?
+		\item kiedy główna pętla gry się zatrzyma i jak działają wyjątki?
+		\item czy lepiej jest inicjować pola klasy przy deklaracji czy w konstruktorze?
+		\item czy się różni ten sam kod w C++ i PHP?
+	\end{itemize}
+
+	\section{Gra}
+	Należy rozszerzyć program z grą tak, aby przedstawić znajomość zagadnień przedstawianych na dotychczasowych zajęciach; należą do nich idea programowania obiektowego, pola i metody, konstruktory i destruktory, hermetyzacja.
+	\begin{itemize}
+		\item do gry przy każdym uruchomieniu zostanie dodanych $n$ graczy; $3 \leq n \leq 10$; $n$ losowe lub konfigurowalne;
+		\item kostka powinna mieć możliwość ustwienia liczby ścian przed dodaniem do gry;
+		\item gra powinna mieć możliwość ustawienia maksymalnej liczby pól.
+	\end{itemize}
+
+	\subsection{Podpowiedzi i wskazówki}
+	\begin{itemize}
+		\item należy zastanowić się które pola i metody powinny być publiczne, a które prywatne;
+		\item należy zastanowić się które dane powinny być wpisywane do obiektu przez konstruktor, a jakie przez dodatkowe metody.
+	\end{itemize}
+
+	\subsection{Zadanie dla ambitnych}
+	Do programu należy dopisać następujące funkcjonalności, które zwiększą dynamikę gry:
+	\begin{itemize}
+		\item jeżeli gracz wyrzuci kostką liczbę $k = 1$, a znajdować się będzie na pozycji nieparzystej, wówczas pionek przesunie się do tyłu o $k'$ równemu nowemu rzutowi kostką;
+		\item jeżeli gracz wyrzuci kostką liczbę $k = k_{max}$, a znajdować się będzie na pozycji podzielnej przez 10, wówczas gracz otrzyma dodatkowy rzut kostką.
+	\end{itemize}
+
+\end{document}

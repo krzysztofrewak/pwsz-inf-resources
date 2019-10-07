@@ -1,0 +1,53 @@
+\documentclass{article}
+
+\usepackage[OT4]{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage[left=2cm,right=2cm,top=1.5cm,bottom=2cm,includeheadfoot,a4paper]{geometry}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{marginnote}
+\usepackage{hyperref}
+\usepackage{listings}
+
+\geometry{a4paper}
+\linespread{1.1}
+\frenchspacing
+\renewcommand{\arraystretch}{1.2}
+
+\title{
+	Projektowanie i programowanie obiektowe \\
+	\Huge{Konstruktory i destruktory}
+}
+\author{mgr inż. Krzysztof Rewak}
+\date{\today}
+
+\begin{document}
+	\maketitle
+
+	\section{Porównanie obiektowych języków programowania}
+	Należy skompilować i uruchomić lub po prostu uruchomić w dowolnym środowisku załączone pliki \texttt{lab03.cpp} oraz \texttt{lab03.php}. Oba programy wykonują dokładnie to samo zadanie: tworzą obiekt klasy \texttt{Point}, inicjalizują nim obiekt klasy \texttt{Circle}, a następnie wykorzystują jedną z metod, aby przesunąć stworzony okrąg i wypisują jego nowe koordynaty.
+	
+	Należy przeanalizować kod, a następnie odpowiedzieć na pytania:
+	\begin{itemize}
+		\item czym jest \texttt{this}?
+		\item czy można zdefiniować więcej niż jeden konstruktor?
+		\item kiedy wywoływany jest destruktor obiektu?
+		\item czym się różnią programy napisane w C++ i PHP?
+		\item czym jest operator \texttt{<<} w C++?
+		\item czym jest operacja \texttt{srand(time(NULL));} w C++?
+		\item co należałoby dodać do konstruktora klasy \texttt{Circle}, aby upewnić się, że obiekt będzie miał sens geometryczny?
+	\end{itemize}
+
+	\section{Konstruktory i destruktory w programowaniu obiektowym}
+	Należy utworzyć plik \texttt{lab03.*}, którego zawartość będzie rozszerzeniem funkcjonalnym załączonego zadania:
+	\begin{itemize}
+		\item program umożliwi generowanie kwadratów, czyli obiektów klasy \texttt{Square};
+		\item program sprawdzi, czy wygenerowany kwadrat ma sens geometryczny;
+		\item program po utworzeniu i usunięciu kwadratu wypisze jego wszystkie wierzchołki w formie punktów $(x, y)$;
+		\item program pozwoli na stworzenie $n$ kwadratów;
+	\end{itemize}
+	
+	Plik z programem należy dołączyć do repozytorium Git. Zalecane jest uporządkowanie zadań w odpowiadającym im katalogach.
+
+\end{document}

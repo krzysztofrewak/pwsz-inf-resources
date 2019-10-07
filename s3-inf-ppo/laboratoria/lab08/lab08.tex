@@ -1,0 +1,55 @@
+\documentclass{article}
+
+\usepackage[OT4]{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage[left=2cm,right=2cm,top=1.5cm,bottom=2cm,includeheadfoot,a4paper]{geometry}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{marginnote}
+\usepackage{hyperref}
+\usepackage{listings}
+
+\geometry{a4paper}
+\linespread{1.1}
+\frenchspacing
+\renewcommand{\arraystretch}{1.2}
+
+\title{
+	Projektowanie i programowanie obiektowe \\
+	\Huge{Przeciążanie operatorów}
+}
+\author{mgr inż. Krzysztof Rewak}
+\date{\today}
+
+\begin{document}
+	\maketitle
+
+	\section{Przeciążanie operatorów}
+	Należy pobrać, dokładnie przeanalizować, skompilować i uruchomić załączony projekt \texttt{lab08}, a następnie odpowiedzieć na pytania:
+	
+	\begin{itemize}
+		\item jaki operator został przeciążony dla klasy \texttt{Library}?
+		\item czym są pliki nagłówkowe \texttt{.h} i w jakim celu się je dodaje do projektu?
+		\item w jakiej strukturze danych przetrzymywane są książki w bibliotece?
+		\item co zwraca operacja dodania książki do biblioteki?
+		\item co się stanie po operacji \texttt{Library("Biblioteka nr 1") + Library("Biblioteka nr 2")}?
+		\item co robi linijka \texttt{setlocale (LC\_ALL, "");}?
+		\item do czego sensownie można używać przeciążenia operatorów?
+	\end{itemize}
+
+	\section{Zadanie programistyczne}
+	Należy utworzyć program realizujący podobną, ale rozszerzoną funkcjonalność. Program może być wykonany w dowolnej technologii pozwalającej na przeciążanie operatorów. Program powinien realizować następujące funkcjonalności:
+	
+	\begin{itemize}
+		\item tworzenie biblioteki, która będzie miała nazwę oraz działy tematyczne;
+		\item dodawanie nazywalnych działów do biblioteki za pomocą operacji dodawania \texttt{library += section};
+		\item dodawanie książek (tytuł, autor) do działu za pomocą operacji dodawania \texttt{section += book}; zalecane jest wygenerowanie $n> 10$ książek dla każdego działu;
+		\item łączenie działów \texttt{section3 = section2 + section1} łączące książki oraz \texttt{section2 += section1} dodające książki z pierwszego działu do drugiego;
+		\item usuwanie konkretnego działu z biblioteki po obiekcie działu (\texttt{library -= section}) oraz nazwie (\texttt{library -= "fantastyka"});
+		\item wypisywanie wszystkich książek danej biblioteki.
+	\end{itemize}
+	
+	Plik z programem należy dołączyć do repozytorium Git. Zalecane jest uporządkowanie zadań w odpowiadającym im katalogach.
+
+\end{document}

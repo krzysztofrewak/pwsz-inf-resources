@@ -1,0 +1,50 @@
+\documentclass{article}
+
+\usepackage[OT4]{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage[left=2cm,right=2cm,top=1.5cm,bottom=2cm,includeheadfoot,a4paper]{geometry}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{marginnote}
+\usepackage{hyperref}
+\usepackage{listings}
+
+\geometry{a4paper}
+\linespread{1.1}
+\frenchspacing
+\renewcommand{\arraystretch}{1.2}
+
+\title{
+	Projektowanie i programowanie obiektowe \\
+	\Huge{Paradygmat obiektowy \\ - modelowanie świata za pomocą obiektów}
+}
+\author{mgr inż. Krzysztof Rewak}
+\date{\today}
+
+\begin{document}
+	\maketitle
+
+	\section{Programowanie strukturalne a obiektowe}
+	Należy skompilować i uruchomić w dowolnym środowisku programistycznym załączone pliki \texttt{lab02a.cpp} oraz \texttt{lab02b.cpp} lub uruchomić \texttt{lab02a.php} oraz \texttt{lab02b.php}. Oba programy wykonują dokładnie to samo zadanie: generują listę $n$ studentów z losowymi numerami indeksów, a następnie wypisują te numery indeksów na standardowym wyjściu. Pliki \texttt{lab02a} zostały napisane w formie strukturalnej, natomiast \texttt{lab02b} - zgodnie z regułami programowania obiektowego.
+	
+	Należy przeanalizować kod, a następnie odpowiedzieć na pytania:
+	\begin{itemize}
+		\item jaka jest różnica między klasą a obiektem?
+		\item czym jest metoda?
+		\item czym jest pole klasy?
+		\item jakie są zalety modelowania obiektowego?
+		\item jakie są różnice między C a PHP?
+	\end{itemize}
+	
+	\section{Zadanie programistyczne}
+	Należy utworzyć plik \texttt{lab02}, którego zawartość będzie rozszerzeniem funkcjonalnym załączonych do zadania programów lub w dowolnym języku obiektowym stworzyć nowy program, w którym:
+	\begin{itemize}
+		\item student - poza numerem indeksu - powinien posiadać też imię i nazwisko; proponowanym rozwiązaniem jest utworzenie tablice stringów, które będą przechowywały przykładowe imiona i nazwiska oraz metody, która będzie je losowała i przydzielała studentom;
+		\item student - poza numerem indeksu, imieniem i nazwiskiem - powienien móc mieć ustawiony status studenta; proponowanym rozwiązaniem jest utworzenie binarnej zmiennej, która będzie wskazywała czy student jest aktywny, czy nie; można wykorzystać metodę \texttt{rand()}, aby losowo dopasować każdemu studentowi jego status;
+		\item program powinien na końcu wypisać na standardowym wyjściu listę wygenerowanych aktywnych studentów w formie \texttt{nazwisko imię (numer indeksu)}.
+	\end{itemize}
+	
+	Plik z programem należy dołączyć do repozytorium Git. Zalecane jest uporządkowanie zadań w odpowiadającym im katalogach. 
+
+\end{document}

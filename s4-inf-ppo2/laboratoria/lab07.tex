@@ -1,0 +1,63 @@
+\documentclass{article}
+
+\usepackage[OT4]{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage[left=2cm,right=2cm,top=1.5cm,bottom=2cm,includeheadfoot,a4paper]{geometry}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{marginnote}
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage{hyperref}
+
+\geometry{a4paper}
+\linespread{1.0}
+\frenchspacing
+\renewcommand{\arraystretch}{1.4}
+
+\title{
+	Projektowanie i programowanie obiektowe II\\
+	\Huge{Testowanie aplikacji}
+}
+\author{mgr inż. Krzysztof Rewak}
+\date{\today}
+
+\begin{document}
+	\maketitle
+
+	\section{TDD i testowanie aplikacji}
+	Należy odpowiedzieć na pytania:
+	\begin{itemize}
+		\item czym jest test jednostkowy?
+		\item czym jest asercja?
+		\item czym jest pokrycie testami?
+		\item kiedy powinny być uruchamiane testy?
+		\item jaki jest sens automatyzacji testowania oprogramowania?
+		\item jaki jest sens pracy w metodyce TDD?
+	\end{itemize}
+	
+	\section{Zadanie}
+	Należy:
+	\begin{itemize}
+		\item pobrać program ppo/lab11: \url{https://bitbucket.org/krewak/pwsz-ppo2/src/master/lab11/},
+		\item pobrać wymagane zależności i uruchomić aplikację w przeglądarce,
+		\item uruchomić testy jednostkowe komendą \texttt{.\textbackslash vendor\textbackslash bin\textbackslash phpunit} i sprawdzić ich status
+	\end{itemize}
+	
+	Następnie:
+	\begin{itemize}
+		\item utworzyć sensowne testy do wszystkich innych klas i metod aplikacji,
+		\item gotowy projekt wraz z testami dołączyć do repozytorium Git.
+	\end{itemize}
+	
+	Ewentualnie dodać mechanizm testowania jednostkowego i stworzyć sensowne testy dla wybranego z programów (od laboratorium piątego i wzwyż) zaimplementowanych na zajęciach z Projektowania i programowania obiektowego I.
+	
+	\begin{thebibliography}{9}
+	
+		\bibitem{assert}
+		\url{https://phpunit.readthedocs.io/en/7.1/assertions.html}
+	
+	\end{thebibliography}
+
+\end{document}

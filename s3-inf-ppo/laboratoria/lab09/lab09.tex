@@ -1,0 +1,66 @@
+\documentclass{article}
+
+\usepackage[OT4]{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage[left=2cm,right=2cm,top=1.5cm,bottom=2cm,includeheadfoot,a4paper]{geometry}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{marginnote}
+\usepackage{hyperref}
+\usepackage{listings}
+
+\geometry{a4paper}
+\linespread{1.1}
+\frenchspacing
+\renewcommand{\arraystretch}{1.2}
+
+\title{
+	Projektowanie i programowanie obiektowe \\
+	\Huge{Klasy i metody abstracyjne}
+}
+\author{mgr inż. Krzysztof Rewak}
+\date{\today}
+
+\begin{document}
+	\maketitle
+	
+	\section{Klasy i metody abstracyjne w programowaniu obiektowym}
+	Należy uruchomić w dowolnym środowisku załączony program z katalogu \texttt{lab09}. Programy w obu językach wykonują dokładnie to samo zadanie.
+	
+	\subsection{Java}
+	W katalogu \texttt{lab09/java} znajduje się kod źródłowy aplikacji podzielonej na pakiety. Należy zbudować, skompilować i uruchomić projekt w dowolny sposób. Zalecane jest środowisko IntelliJ IDEA (dostępne dla studentów za darmo).
+	
+	\subsection{PHP}
+	W katalogu \texttt{lab09/php} znajduje się kod źródłowy aplikacji wymagającej autoloadera. Należy uruchomić komendę \texttt{composer install}, aby utworzyć katalog \texttt{vendor} z wymaganymi plikami. Aplikację uruchamia się poprzez polecenie \texttt{php index.php} w głównym katalogu. Zalecane jest środowisko PHPStorm (dostępne dla studentów za darmo).
+	
+	\subsection{Pytania do zadania}
+	Należy odpowiedzieć na następujące pytania dotyczące klas abstrakcyjnych:
+	\begin{itemize}
+		\item czym jest klasa abstrakcyjna?
+		\item czy można utworzyć klasę \texttt{final abstract class Zoo}?
+		\item czy klasa abstrakcyjna może implementować interfejs?
+		\item czym jest polimorfizm?
+	\end{itemize}
+	
+	A także dotyczące metod abstrakcyjnych:
+	
+	\begin{itemize}
+		\item czym jest metoda abstrakcyjna?
+		\item czym się różni wymuszenie implementacji metody poprzez dziedziczenie metody abstrakcyjnej a poprzez implementację interfejsu?
+	\end{itemize}
+	
+	Czy abstrakcja metod i klas jest ze sobą powiązana?
+
+	\section{Zadanie programistyczne}
+	Należy rozszerzyć program:
+	
+	\begin{itemize}
+		\item zoo będzie posiadało więcej zwierząt: lwy, tygrysy, słonie, żyrafy, szympansy, delfiny, pingwiny, jeżozwierze;
+		\item pożywienie powinno być instancją nowej klasy zamiast stringiem;
+		\item pracownik zoo powiniem posiadać harmonogram karmienia zwierząt: o ósmej będzie chodził z mięsem, o dziewiątej z warzywami, itp.
+	\end{itemize}
+	
+	Plik z programem należy dołączyć do repozytorium Git. Zalecane jest uporządkowanie zadań w odpowiadającym im katalogach.
+
+\end{document}

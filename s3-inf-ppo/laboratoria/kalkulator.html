@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Projektowanie i programowanie obiektowe :: kalkulator ocen</title>
+		<meta charset="utf-8">
+
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&amp;subset=greek,latin">
+		<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
+
+		<style type="text/css">
+			* { font-family: "Roboto", sans-serif; }
+			html, body, #app { height: 100%; margin: 0; }
+			input { text-align: center; }
+			.ui.container { margin: 3em auto; }
+			.button { margin: .5em auto !important; }
+			.divider { margin: 3em 0 !important; }
+			[disabled] { opacity: 1 !important; }
+		</style>
+	</head>
+
+	<body>
+		<div id="app">
+			<div class="ui container">
+				<h1 class="ui header">
+					Kalkulator ocen
+					<div class="sub header">Kalkulator ocen na Projektowanie i programowanie obiektowe</div>
+				</h1>
+
+				<div class="ui divider"></div>
+
+				<div class="ui grid">
+					<div class="three column row">
+						<div class="column">
+							<h4>Oceny</h4>
+							<div class="ui form">
+								<div class="two fields">
+									<div class="field">
+										<input type="text" placeholder="Z1" v-model="grades.z1">
+									</div>
+									<div class="field">
+										<input type="text" placeholder="Z1'" v-model="grades.z1p">
+									</div>
+								</div>
+								<div class="two fields">
+									<div class="field">
+										<input type="text" placeholder="Z2" v-model="grades.z2">
+									</div>
+									<div class="field">
+										<input type="text" placeholder="Z2'" v-model="grades.z2p">
+									</div>
+								</div>
+								<div class="two fields">
+									<div class="field">
+										<input type="text" placeholder="Z3" v-model="grades.z3">
+									</div>
+									<div class="field">
+										<input type="text" placeholder="Z3'" v-model="grades.z3p">
+									</div>
+								</div>
+								<div class="field">
+									<input type="text" placeholder="P" v-model="project">
+								</div>
+							</div>
+						</div>
+						<div class="column">
+							<h4>Inne</h4>
+							<div class="ui form">
+								<div class="field">
+									<div class="ui icon input">
+										<input placeholder="Liczba plusów" v-model="pluses">
+										<i class="plus icon"></i>
+									</div>
+								</div>
+								<div class="field">
+									<div class="ui icon input">
+										<input placeholder="Liczba oddanych zadań" v-model="tasks">
+										<i class="github icon"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="column">
+							<h4>Ocena końcowa</h4>
+							<h3>k = {{ receivedGrades.join(" + ") }} + 2 * {{ project }} = {{ average }}</h3>
+							<h3>p = {{ pluses }} * {{ weights.plus }} = {{ plusesValue }}</h3>
+							<h3>z = (11 - {{ tasks }}) * {{ weights.task }} = {{ tasksValue }}</h3>
+							<h3>{{ final }}</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			new Vue({
+				el: "#app",
+				data() {
+					return {
+						weights: {
+							plus: 0.015,
+							task: -0.1,
+						},
+						grades: {
+							z1: 5,
+							z1p: null,
+							z2: 5,
+							z2p: null,
+							z3: 5,
+							z3p: null,
+						},
+						project: 5,
+						pluses: 0,
+						tasks: 11,
+					}
+				},
+				computed: {
+					receivedGrades() {
+						return Object.values(this.grades).filter(function(grade) {
+							return grade
+						})
+					},
+					average() {
+						let sum = this.receivedGrades.reduce((a, b) => parseFloat(a) + parseFloat(b))
+						let average = (sum + 2 * parseFloat(this.project)) / (this.receivedGrades.length + 2)
+						return average.toFixed(2)
+					},
+					plusesValue() {
+						let value = this.pluses * this.weights.plus
+						return value.toFixed(2)
+					},
+					tasksValue() {
+						let value = (11 - this.tasks) * this.weights.task
+						return value.toFixed(2)
+					},
+					final() {
+						let value = parseFloat(this.average) + parseFloat(this.plusesValue) + parseFloat(this.tasksValue)
+						return value.toFixed(2)
+					}
+				}
+			});
+		</script>
+	</body>
+</html>
+

@@ -1,0 +1,17 @@
+{
+	"name": "ppo/lab11",
+	"authors": [
+		{
+			"name": "Krzysztof Rewak",
+			"email": "RewakK@pwsz.legnica.edu.pl"
+		}
+	],
+	"require": {
+		"php": ">=7.1"
+	},
+	"autoload": {
+		"psr-4": {
+			"PPO\\Dashboard\\": "src/"
+		}
+	}
+}

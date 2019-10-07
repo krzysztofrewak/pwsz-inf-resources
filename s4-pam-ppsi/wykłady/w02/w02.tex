@@ -1,0 +1,330 @@
+\input{../_template/preamble.tex}
+
+\title{Statyczne strony w internecie}
+
+\input{../_template/prologue.tex}
+
+\section{HTML, szkielet każdej strony internetowej}
+
+\begin{frame}{Czym nie jest HTML?}
+	Warto zapamiętać, że przede wszystkim \textbf{HTML nie jest językiem programowania}.
+\end{frame}
+
+\begin{frame}{Czym jest HTML?}
+	\textbf{HTML}, \emph{HyperText Markup Language}, to hipertekstowy język znaczników umożliwiający ustandaryzowane zapisanie struktury strony internetowej.
+	
+	Prostymi słowami: jest to szkielet stron internetowych.
+	
+	Może zostać statycznie uruchomiony z poziomu pliku *.html przez każdą przeglądarkę internetową lub wygenerowany przez system internetowy.
+\end{frame}
+
+\begin{frame}[fragile]{Prosty przykład}
+	Najprotszy szkielet strony internetowej powinien wyglądać następująco:
+	
+	\noindent\rule{2cm}{0.4pt}
+
+	\begin{lstlisting}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Homepage title</title>
+  </head>
+
+  <body>
+    <h1>Title</h1>
+    <p>Content</p>
+  </body>
+
+</html>
+	\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Budowa tagu HTML}
+	Można z grubsza podzielić tagi na dwa podstawowe rodzaje: domykane i niedomykane. Domykane zawsze muszą zostać zamknięte przez tag domknięcia:
+	\begin{lstlisting}
+<tag attribute1="value1" attribute2="value2"></tag>
+	\end{lstlisting}
+	
+	Analogicznie sprawa się ma z tagami niedomykanymi:
+	
+	\begin{lstlisting}
+<tag attribute1="value1" attribute2="value2">
+	\end{lstlisting}
+	
+	Oprócz globalnych atrybutów (przykładowo \texttt{class}, \texttt{id} i \texttt{style}), każdy tag ma listę dostępnych dla siebie atrybutów, których każdy może przyjąć pewną wartość. Szczegóły można znaleźć w dokumentacji pod adresem \texttt{\href{https://www.w3schools.com/tags/default.asp}{https://www.w3schools.com/tags/default.asp}}.
+\end{frame}
+
+\begin{frame}[fragile]{Najpopularniejsze tagi HTML: \texttt{a}}
+	Tag \texttt{<a>} pozwala na tworzenie odnośników zwanych hiperłączami. Poniższy kod doda na stronie internetowej tekst \emph{go to Google}, który po kliknięciu nań przeniesie użytkownika na stronę \texttt{https://google.com/}:
+
+	\begin{lstlisting}
+<a href="https://google.com/">go to Google</a>
+	\end{lstlisting}
+	
+	Można wymusić, aby klikane hiperłącza były otiwerane w nowych oknach lub zakładkach przeglądarki:
+
+	\begin{lstlisting}
+<a href="https://google.com/" target="_blank">go to Google</a>
+	\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Najpopularniejsze tagi HTML: \texttt{div}}
+	Tag \texttt{<div>} pozwala na tworzenie kontenerów lub sekcji dzięki którym można zbudować sensowny szkielet strony internetowej. Kontener należy wyobrażać sobie bazowo jako prostokąt, który można kłaść obok innych prostokątów, pod nimi lub w nich.
+
+	\begin{lstlisting}
+<div class="row">
+  <div class="column">column 1</div>
+  <div class="column">column 2</div>
+  <div class="column">column 3</div>
+</div>
+<div class="row">
+  <div class="column">column 1</div>
+  <div class="column">column 2</div>
+</div>
+	\end{lstlisting}
+	
+	Domyślnie kontenery mają szerokość i wysokość swojej zawartości i pojawiają się jeden pod drugim. Oczywiście można to zmienić za pomocą kaskadowych arkuszy stylu, co zostanie przeybliżone w dalszej części wykładu.
+\end{frame}
+
+\begin{frame}[fragile]{Najpopularniejsze tagi HTML: \texttt{form} i \texttt{input}}
+	Tag \texttt{<form>} pozwala na dodanie formularza na stronie, natomiast \texttt{input} umożliwia tworzenie pól formularzy:
+
+	\begin{lstlisting}
+<form>
+  <input type="text" name="login" placeholder="Insert login...">
+  <input type="email" name="email" placeholder="Insert email...">
+  <input type="password" name="password"
+         placeholder="Insert password...">
+  <input type="submit" value="Submit this form">
+</form>
+	\end{lstlisting}
+	
+	Powyższy kod utworzy formularz z polem tekstowym na login użytkownika, walidowanym przez przeglądarkę polem na email, zakrytym polem na hasło oraz z przyciskiem wysyłającym formularz. 
+\end{frame}
+
+\begin{frame}[fragile]{Najpopularniejsze tagi HTML: \texttt{table}}
+
+\begin{columns}
+\begin{column}{0.5\textwidth}
+	Tag \texttt{<table>} pozwala na tworzenie tabeli. Każda tabela może składać się z nagłówka, ciała oraz stopki, a w nich można zamieszczać wiersze składające się z komórek. 
+	
+	\ \\
+	
+	Należy pamiętać, że tabele służą jedynie to przedstawiania danych w formie tabelarycznej. Budowanie layoutu opartego na tabelach to przestarzała technologia.
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{lstlisting}
+<table>
+  <thead>
+    <tr>
+      <td>no.</td>
+      <td>name</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Bruce</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Clark</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Diana</td>
+    </tr>
+  </tbody>
+</table>
+\end{lstlisting}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}[fragile]{Najpopularniejsze tagi HTML: \texttt{li}}
+
+\begin{columns}
+\begin{column}{0.5\textwidth}
+	Tag \texttt{<li>} pozwala na tworzenie list. 
+	
+	\ \\
+	
+	Jeżeli umieścimy tagi \texttt{<li>} w tagu \texttt{<ol>} lub \texttt{<ul>}, otrzymamy kolejno listę uporządkowaną (ponumerowaną) oraz nieuporządkowaną (oznaczoną domyślnie kropkami).
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{lstlisting}
+<li>item 1</li>
+<li>item 2</li>
+<li>item 3</li>
+
+<ul>
+  <li>item 1</li>
+  <li>item 2</li>
+  <li>item 3</li>
+</ul>
+
+<ol>
+  <li>item 1</li>
+  <li>item 2</li>
+  <li>item 3</li>
+</ol>
+\end{lstlisting}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}[fragile]{Najpopularniejsze tagi HTML: style w tekście}
+	Warto zapamiętać, że pogrubianie ważnego tekstu na stronie internetowej tagiem \texttt{<b>} jest błędem. 
+	
+	\ \\
+
+	\begin{lstlisting}
+<strong>Important text.</strong>
+<em>Emphasized text.</em>
+	\end{lstlisting}
+	
+	\begin{lstlisting}
+<b>Bold text.</b>
+<i>Alternate text.</i>
+	\end{lstlisting}
+\end{frame}
+
+\section{CSS, czyli jak upiększyć internet}
+
+\begin{frame}{Czym jest CSS?}
+	\textbf{CSS}, \emph{Cascading Style Sheets}, czyli kaskadowe arkusze stylu (stylów) to język znaczników wspomagający budowanie stron internetowych.
+\end{frame}
+
+\begin{frame}[fragile]{Gdzie znaleźć CSS?}
+	Dodawany jest do sekcji \texttt{<body>} w jeden z dwóch sposobów: dołączenie zewnętrznego pliku (przykładowo \texttt{style.css}) lub bezpośrednie dodanie reguł w nagłówku pliku HTML:
+
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{lstlisting}
+<link rel="stylesheet"
+  type="text/css"
+  href="style.css">
+\end{lstlisting}
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{lstlisting}
+<style type="text/css">
+  html { margin: 1em; }
+  body { background: Orange; }
+</style>
+\end{lstlisting}
+\end{column}
+\end{columns}
+
+	Zalecany sposób to dołączanie zewnętrznych plików.
+\end{frame}
+
+\begin{frame}[fragile]{Selektory CSS}
+	Każda reguła składa się z selektora oraz skończonego zestawu par atrybut-wartość:
+	\begin{lstlisting}
+selector { attribute1: value; attribute2: value; }
+	\end{lstlisting}
+	
+	Selektor może odnosić się do trzech typów obiektów: tagów HTML, identyfikatorów obiektów oraz klas obiektów. Należy wyobrazić sobie, że szkielet strony zbudowanej w HTML można interpretować jako zbiór obiektów - DOM. 
+	\begin{lstlisting}
+<div id="header" class="dark-theme responsive-width">...</div>
+
+div { padding: 5px; }
+#header { width: 100%; }
+.dark-theme { background: Black; color: White; }
+	\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Selektory CSS}
+	Selektory w CSS można dowolnie modyfikować za pomocą specjalnych operatorów \texttt{>} oraz  \texttt{.}. Przykładowo można nadać styl:
+	
+	\ \\
+	
+	$\bullet$ każdej sekcji, której bezpośredni rodzic ma klasę \texttt{container}:	
+	\begin{lstlisting}
+.container > section { margin-top: 3em; }
+	\end{lstlisting}
+
+	$\bullet$ każdej sekcji, której jakikolwiek rodzic ma klasę \texttt{container}:	
+	\begin{lstlisting}
+.container section { padding: 1em; }
+	\end{lstlisting}
+
+	$\bullet$ każdemu obiektowi który jednocześnie ma klasy \texttt{container} i \texttt{dark-theme}:
+	\begin{lstlisting}
+.container.dark-theme { background: Black; }
+	\end{lstlisting}
+
+	$\bullet$ tagom \texttt{header} i \texttt{footer} naraz:
+	\begin{lstlisting}
+header, footer { opacity: .5; }
+	\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Najważniejsze atrybuty i ich wartości}	
+	\begin{itemize}
+		\item \texttt{color: \{ Red, \#FF0000 \}} - zmienia kolor tekstu
+		\item \texttt{font-family: "Arial"} - zmienia font
+		\item \texttt{width: \{ 100\%, 720px, 10em \}} - zmienia szerokość elementu
+		\item \texttt{margin\{-top, -right, -bottom, -left\}: \{ 10px, 1em \}} - zmienia margines zewnętrzny
+		\item \texttt{padding\{-top, -right, -bottom, -left\}: \{ 10px, 1em \}} - zmienia margines wewnętrzny
+		\item \texttt{display: \{ block, inline, none \}} - zmienia sposób ułożenia względem innych elementów
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Gotowe i wygodne rozwiązania - frameworki CSS}
+	Istnieje mnóstwo narzędzi, które ułatwiają budowanie aplikacji internetowych od strony frontendu. Warto zapoznać się z przynajmniej jednym z tych frameworków, aby ułatwić sobie pracę w przyszłości oraz poznać obecne standardy.
+	
+	\begin{itemize}
+		\item Bootstrap - najprawdopodobniej obecnie najpopularniejszy
+		\item Semantic UI
+		\item Foundation
+		\item Materlialize
+		\item Bulma
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Przykładowy kod z użyciem frameworka CSS}
+	\begin{lstlisting}
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-4">
+      Content
+    </div>
+    <div class="col-12 col-md-4">
+      Content
+    </div>
+    <div class="col-12 col-md-4">
+      Content
+    </div>
+  </div>
+</div>
+	\end{lstlisting}
+	
+	Powyższy kod stworzy responsywną siatkę, która dla ekranów o małej rozdzielczości będzie składała się z trzech kontenerów znajdujących się pod sobą lub dla ekranów o większej rozdzielczości - trzech kontenerów ułożonych obok siebie.
+\end{frame}
+
+\section{Podsumowanie}
+
+\begin{frame}{Bibliografia i ciekawe źródła}
+  
+	\begin{thebibliography}{9}
+	
+		\bibitem{w3}
+		https://www.w3schools.com/
+	
+		\bibitem{bootstrap}
+		https://getbootstrap.com/
+	
+		\bibitem{semantic}
+		https://semantic-ui.com/
+	
+	\end{thebibliography}
+
+\end{frame}
+
+\input{../_template/epilogue.tex}

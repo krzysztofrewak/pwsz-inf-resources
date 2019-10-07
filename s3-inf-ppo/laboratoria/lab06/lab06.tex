@@ -1,0 +1,50 @@
+\documentclass{article}
+
+\usepackage[OT4]{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage[left=2cm,right=2cm,top=1.5cm,bottom=2cm,includeheadfoot,a4paper]{geometry}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{marginnote}
+\usepackage{hyperref}
+\usepackage{listings}
+
+\geometry{a4paper}
+\linespread{1.1}
+\frenchspacing
+\renewcommand{\arraystretch}{1.2}
+
+\title{
+	Projektowanie i programowanie obiektowe \\
+	\Huge{Wielokrotne dziedziczenie klas}
+}
+\author{mgr inż. Krzysztof Rewak}
+\date{\today}
+
+\begin{document}
+	\maketitle
+
+	\section{Wielokrotne dziedziczenie klas w programowaniu obiektowym}
+	Należy zbudować i uruchomić załączony plik \texttt{lab06.py} z dodatkowym plikiem \texttt{force\_users.py}. Proponowane środowisko programistyczne to PyCharm w wersji Community Edition z Pythonem w wersji 2.7. Należy przeanalizować kod, a następnie odpowiedzieć na pytania:
+	\begin{itemize}
+		\item jak wygląda hierarchia dziedziczenia w przykładowym programie?
+		\item czym się różni dziedziczenie w Pythonie od dziedziczenia w PHP?
+		\item czym jest funkcja \texttt{\_\_init\_\_()}?
+		\item ilu różnych form ataku może użyć lord Sithów?
+		\item czym jest funkcja \texttt{super()}?
+		\item jakie mogłoby być uzasadnione wykorzystanie przykładowego programu?
+	\end{itemize}
+
+	\section{Zadanie programistyczne}
+	Należy rozszerzyć program z pliku \texttt{lab06.py} o następujące funkcjonalności:
+	\begin{itemize}
+		\item program pozwala wygenerować dowolną liczbę uczestników; generowani uczestnicy mogą mieć losowe nazwy lub po prostu numery identyfikacyjne; 
+		\item należy dodać element losowości do siły ataku; można założyć poziom szumu na poziomie $\pm$ 10\%;
+		\item należy dodać możliwość bronienia się przed atakiem; proponowane rozwiązanie to utworzenie dodatkowej klasy \texttt{Defence} z wartością wyrażoną w procentach oznaczającą możliwość wyjścia bezpiecznie z sytuacji; przy ataku uczestnika A na uczestnika B sprawdzana byłaby możliwość obrony uczestnika B i na jej podstawie atak by się powiódł, częściowo powiódł lub chybił;
+		\item należy stworzyć system zapamiętywania w jakiej kolejności który uczestnik ,,odpadł'' z zawodów; chronologiczna lista powinna wyświetlić się przy zakończeniu programu.
+	\end{itemize}
+	
+	Plik z programem należy dołączyć do repozytorium Git. Zalecane jest uporządkowanie zadań w odpowiadającym im katalogach.
+
+\end{document}

@@ -1,0 +1,103 @@
+\documentclass{article}
+
+\usepackage[OT4]{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage[left=2cm,right=2cm,top=1.5cm,bottom=2cm,includeheadfoot,a4paper]{geometry}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{marginnote}
+\usepackage{tabularx}
+\usepackage{multicol}
+
+\geometry{a4paper}
+\linespread{1.0}
+\frenchspacing
+\renewcommand{\arraystretch}{1.4}
+
+\title{
+	Zaawansowane metody programowania\\
+	\Huge{Zasady zaliczenia zajęć laboratoryjnych}
+}
+\author{mgr inż. Krzysztof Rewak}
+\date{\today}
+
+\begin{document}
+	\maketitle
+
+	\section{Warunki zaliczenia}
+	Zaliczenie zajęć laboratoryjnych kursu \textbf{Zaawansowane metody programowania} odbywa się poprzez opracowanie systemu programów komputerowych i sprawozdania oraz prezentację pracy projektowej. Ocena końcowa dla studenta $\Omega$ będzie wyliczana w jako średnia ważona na podstawie poniższej tabeli z wagami:
+	
+	\ \\
+	
+	\begin{tabularx}{.95\textwidth}{l|l|X|l|l}
+		\textbf{\#} & \textbf{symbol} & \textbf{zakres} & \textbf{waga} & \textbf{ ocena \ \ \ } \\ \hline
+		1 & $p_1$ & ocena za postęp prac w okolicach 7. zajęć & $\times$1.0 \\ \hline
+		2 & $p_2$ & ocena za postęp prac w okolicach 10. zajęć & $\times$1.0 \\ \hline
+		3 & $p_s$ & ocena za dostarczoną specyfikację projektu & $\times$1.0 \\ \hline
+		4 & $k_{p}$ & ocena za funkcjonalność projektu & $\times$5.0 \\ \hline
+		5 & $k_{s}$ & ocena za zgodność ze specyfikacją & $\times$2.0 \\ \hline
+		6 & $k_{cc}$ & ocena za czystość kodu & $\times$3.0 \\ \hline
+		7 & $k_{wp}$ & ocena za wykorzystanie wzorców projektowych & $\times$3.0 \\ \hline
+		8 & $k_{t}$ & ocena za testy & $\times$2.0 \\ \hline
+		9 & $z$ & ocena zespołu za pracę projektową & $\times$2.0 \\ \hline
+		10 & $z_z$ & ocena zespołu za pracę zespołową & $\times$2.0 \\ \hline
+		11 & $z_s$ & ocena zespołu za sprawozdanie z pracy projektowej & $\times$1.0 \\ \hline
+		12 & $z_p$ & ocena zespołu za prezentację pracy projektowej & $\times$1.0 \\
+	\end{tabularx}
+	
+	\ \\
+	
+	Oddanie pracy projektowej wymaga obecności całego zespołu. Ze względu na projektowy charakter zajęć, niedostateczna ocena wystawiona pod koniec semestru nie może zostać poprawiona w terminie dodatkowym.
+	
+	\subsection{Praca projektowa}
+	Celem projektu jest zdobycie doświadczenia w nowych technologiach. Należy zaprojektować, zaimplementować i wdrożyć system zgodnie z warunkami zdefiniowanymi poniżej:
+	
+	\begin{itemize}
+		\item projekt jest wykonywany w grupach; liczba osób w grupie zależy bezpośrednio od liczby części systemu;
+		\item w każdym systemie musi znaleźć się minimum po jednej aplikacji desktopowej, mobilnej oraz webowej;
+		\item lista członków zespołu, podział ról, wybrane technologie oraz temat muszą zostać przedstawione i zaakceptowane ostatecznie do terminu drugich zajęć;
+		\item każdy zespół powinien stworzyć wspólną przestrzeń repozytoriów i przedstawić ją prowadzącemu; w okolicach 7. i 10. zajęć zostaną wystawione indywidualne oceny z postępu prac nad aplikacjami;
+		\item każda aplikacja będzie oceniana pod względem wdrożenia tzw. czystego kodu, zastosowania wzorców projektowych oraz korzystania z dobrych praktyk programistycznych.
+	\end{itemize}
+	
+	Przykładowe tematy oraz stosy technologiczne zostaną przedstawione na pierwszych zajęciach. Sugerowane są technologie, które do tej pory nie były wykorzystywane na zajęciach.
+	
+	\subsection{Sprawozdanie z pracy projektowej}
+	Należy opracować jedno sprawozdanie na zespół. Warunki zaliczenia kształują się następująco:
+	\begin{itemize}
+		\item zgodnie z ogólnoprzyjętymi standardami akademickimi i naukowymi, sprawozdanie powinno zostać skonstruowane w technologii \LaTeX \ i oddane w formacie \texttt{.pdf};
+		\item sprawozdanie powinno zostać dostarczone najpóźniej w dniu oddania całego projektu w formie elektronicznej;
+		\item sprawozdanie powinno zawierać (jako rozdziały lub sekcje):
+		\begin{itemize}
+			\item opis funkcjonalny systemu oraz jego części składowych,
+			\item streszczenie opisu technologicznego każdej aplikacji,
+			\item streszczenie wykorzystanych wzorców projektowych w każdej aplikacji,
+			\item instrukcję lokalnego i zdalnego uruchomienia testów oraz samego systemu,
+			\item wnioski projektowe.
+		\end{itemize}
+	\end{itemize}	
+	
+	\subsection{Prezentacja pracy projektowej}
+	Należy zaprezentować całym zespołem efekty swojej pracy w formie przedstawienia działającego systemu. Dopuszczalne są dodatkowe formy takie jak krótka prezentacja multimedialna.
+	
+	\section{Terminarz}
+	\begin{itemize}
+		\item 1: Zajęcia wstępne, wybór grup
+		\item 2: Praca zespołowa, termin deklaracji projektowych,
+		\item 3: Praca zespołowa,
+		\item 4: Praca zespołowa, termin dostarczenia specyfikacji,
+		\item 5: Praca zespołowa,
+		\item 6: Praca zespołowa,
+		\item 7: Praca zespołowa, pierwsza ocena postępu prac,
+		\item 8: Praca zespołowa,
+		\item 9: Praca zespołowa,
+		\item 10: Praca zespołowa, druga ocena postępu prac,
+		\item 11: Praca zespołowa,
+		\item 12: Praca zespołowa, oddawanie projektu
+		\item 13: Praca zespołowa, oddawanie projektu
+		\item 14: Praca zespołowa, oddawanie projektu
+		\item 15: \textbf{Ostateczny termin oddania projektu}
+	\end{itemize}
+
+\end{document}

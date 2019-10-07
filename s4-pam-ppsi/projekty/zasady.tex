@@ -1,0 +1,172 @@
+\documentclass{article}
+
+\usepackage[OT4]{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage[left=2cm,right=2cm,top=1.5cm,bottom=2cm,includeheadfoot,a4paper]{geometry}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{marginnote}
+\usepackage{tabularx}
+\usepackage{multicol}
+
+\geometry{a4paper}
+\linespread{1.0}
+\frenchspacing
+\renewcommand{\arraystretch}{1.4}
+
+\title{
+	Projektowanie i programowanie systemów internetowych I\\
+	\Huge{Zasady zaliczenia zajęć projektowych}
+}
+\author{mgr inż. Krzysztof Rewak}
+\date{\today}
+
+\begin{document}
+	\maketitle
+
+	\section{Warunki zaliczenia}
+	Zaliczenie zajęć projektowych kursu \textbf{Projektowanie i programowanie systemów internetowych} odbywa się poprzez opracowanie projektu programistycznego i sprawozdania oraz prezentację pracy projektowej. Ocena końcowa $\Omega$ będzie wyliczana w następujący sposób:
+	
+	\begin{equation} \label{eq:someequation}
+		\Omega = 0.5k_1 + 0.3k_2 + 0.2k_3
+	\end{equation}
+	
+	gdzie kolejne $k_n$ powinny być rozumiane następująco:
+	
+	\begin{itemize}
+		\item $k_1$ - ocena za pracę projektową;
+		\item $k_2$ - ocena za sprawozdanie z pracy projektowej;
+		\item $k_3$ - ocena za prezentację pracy projektowej.
+	\end{itemize}
+	
+	Oceniany jest zespół oddający pracę, zatem wszyscy członkowie zespołu otrzymują identyczną ocenę końcową. Należy to rozumieć dwojako:
+	\begin{itemize}
+		\item jeżeli tylko jedna osoba w zespole potrafi odpowiedzieć na pytanie prowadzącego zajęcia, zespół zostaje oceniony pozytywnie;
+		\item jeżeli żadna osoba w zespole nie potrafi odpowiedzieć na pytanie prowadzącego zajęcia, zespół zostaje oceniony negatywnie.
+	\end{itemize}
+	
+	Oddanie pracy projektowej wymaga obecności całego zespołu, a warunkiem koniecznym jest $k_n > 2.0$
+	
+	\subsection{Praca projektowa}
+	Należy zaprojektować, zaimplementować i wdrożyć system internetowy wedle własnego pomysłu lub na podstawie wybranego spośród proponowanych tematów w punkcie 2. tego dokumentu. Warunki zaliczenia kształtują się następująco:
+	
+	\begin{itemize}
+		\item projekt jest wykonywany w parach:
+		\begin{itemize}
+			\item w przypadku niedobrania pary, parę wyznacza prowadzący zajęcia;
+			\item w przypadku nieparzystej liczby studentów, prowadzący może utworzyć zespół trzyosobowy;
+		\end{itemize}
+		\item unikalny temat projektu musi zostać zatwierdzony przez prowadzącego zajęcia najpóźniej do terminu trzeciech zajęć; w przeciwnym razie grupa otrzymuje:
+		\begin{itemize}
+			\item wybrany przez prowadzącego temat bez możliwości zmiany tematu;
+			\item modyfikator $-0.5$ do oceny końcowej za projekt za niedotrzymanie terminu;
+		\end{itemize}
+		\item podział prac w zespole powinien zostać zdefiniowany na początku pracy i zgłoszony wraz z tematem projektu;
+		\item projekt może być wykonany w dowolnym języku lub językach programowania, z wykorzystaniem dowolnych bibliotek, komponentów lub wtyczek;
+	\end{itemize}
+	
+	\newpage
+	
+	Praca projektowa musi zawierać przynajmniej $n$ z podanych poniżej dwudziestu zagadnień kwalifikacyjnych. Za każdą kwalifikację zostanie wystawiona ocena cząstkowa, a z nich zostanie wyliczona ocena $k_1$, ale niewyższa niż $f(n)$.
+	
+	\begin{center}
+		\begin{tabularx}{.5\textwidth}{X|X}
+		\textbf{n} & \textbf{ f(n) } \\ \hline
+		$ \geq 16 $ &  5.0 \\ \hline
+		$ 14-15 $ &  4.5 \\ \hline
+		$ 12-13 $ &  4.0 \\ \hline
+		$ 10-11 $ &  3.5 \\ \hline
+		$ 8-9 $ &  3.0 \\ \hline
+		$ \le 8 $ &  2.0 \\
+		\end{tabularx}
+	\end{center}
+	
+	\renewcommand{\arraystretch}{1.9}
+	
+	\begin{tabularx}{.95\textwidth}{l|X|l}
+		\textbf{\#} & \textbf{Zagadnienie} & \textbf{ Ocena \ \ \ } \\ \hline
+		1 & \textbf{HTML5}, szkielet aplikacji webowej \\ \hline
+		2 & \textbf{CSS3}, ostylowanie aplikacji webowej \\ \hline
+		3 & \textbf{formularze}, wykorzystanie formularza do przesyłu danych do aplikacji \\ \hline
+		4 & \textbf{baza danych}, połączenie z zewnętrzną bazą danych \\ \hline
+		5 & \textbf{router}, zarządzenie ścieżkami dostępu aplikacji \\ \hline
+		6 & \textbf{uwierzytelnianie}, umożliwienie rejestracji i logowania użytkowników \\ \hline
+		7 & \textbf{MVC}, wykorzystanie wzorca model-widok-kontroler \\ \hline
+		8 & \textbf{CRUD}, operacje dodawania, edycji i usuwania rekordów z bazy danych \\ \hline
+		9 & \textbf{ORM}, system mapowania relacyjno-obiektowego \\ \hline
+		10 & \textbf{wystawienie API}, wystawienie udokumentowanych adresów URL z informacjami \\ \hline
+		11 & \textbf{konsumowanie API}, wykorzystanie zewnętrznego API w systemie \\ \hline
+		12 & \textbf{AJAX}, wykorzystanie asynchronicznych zapytań ze strony frontendu\\ \hline
+		13 & \textbf{mail}, wysyłanie emaili z systemu \\ \hline
+		14 & \textbf{lokalizacja}, umożliwienie wielojęzyczności systemu \\ \hline
+		15 & \textbf{RWD}, poprawne wyświetlanie frontendu na różnych urządzeniach \\ \hline
+		16 & \textbf{logger}, logowanie akcji w aplikacji \\ \hline
+		17 & \textbf{cache}, np. wyszukiwarka wykorzystująca system pamięci podręcznej \\ \hline
+		18 & \textbf{system zarządzania zależnościami} wykorzystany przy projekcie\\ \hline
+		19 & \textbf{automatyzacja}, na przykład wykorzystanie Sass albo minifikowanie JS \\ \hline
+		20 & \textbf{SEO}, wprowadzenie optymalizacji dla wyszukiwarek \\
+	\end{tabularx}
+	
+	\subsection{Sprawozdanie z pracy projektowej}
+	Należy opracować sprawozdanie z pracy projektowej. Warunki zaliczenia kształują się następująco:
+	\begin{itemize}
+		\item zgodnie z ogólnoprzyjętymi standardami naukowymi, sprawozdanie jest skonstruowane w technologii \LaTeX \ i oddane w formacie \texttt{.pdf};
+		\item sprawozdanie jest dostarczone najpóźniej w dniu oddania całego projektu w formie elektronicznej lub papierowej;
+		\item sprawozdanie zawiera jako rozdziały lub sekcje:
+		\begin{itemize}
+			\item opis funkcjonalny systemu
+			\item wyszczególnione wdrożone kwalifikacje z punktu 1.1
+			\item streszczenie opisu technologicznego
+			\item instrukcję lokalnego i zdalnego uruchomienia systemu
+			\item wnioski projektowe.
+		\end{itemize}
+	\end{itemize}	
+	
+	\subsection{Prezentacja pracy projektowej}
+	Należy przestawić całym zespołem efekty swojej pracy. Prezentacja musi odbyć się w formie przedstawienia działającej aplikacji. Dopuszczalne są dodatkowe formy takie jak krótka prezentacja multimedialna.
+	
+	\section{Przykładowe tematy prac projektowych}
+	\begin{multicols}{2}
+		\begin{itemize}
+			\item blog
+			\item system z ogłoszeniami
+			\item sklep internetowy
+			\item kalendarz urodzin
+			\item portal informacyjny
+			\item system do tworzenia dokumentacji projektów informatycznych
+			\item forum internetowe
+			\item e-dziennik
+			\item czytnik RSS
+			\item klony lub adaptacje popularnych systemów:
+			\begin{itemize}
+				\item Endomondo
+				\item GoodReads albo lubimyczytac.pl
+				\item Instagram
+				\item Tinder
+			\end{itemize}
+		\end{itemize}
+	\end{multicols}
+	
+	\section{Terminarz}
+	\begin{multicols}{2}
+		\begin{itemize}
+			\item \textbf{1.: Zajęcia wstępne}
+			\item 2.: Praca zespołowa
+			\item \textbf{3.: Termin deklaracji tematu}
+			\item 4.: Praca zespołowa
+			\item 5.: Praca zespołowa
+			\item 6.: \textbf{Termin dostarczenia adresu i udzielenia dostępów do repozytorium projektu}
+			\item 7.: Praca zespołowa
+			\item 8.: \textbf{Połowa semestru}
+			\item 9.: Praca zespołowa
+			\item 10.: Praca zespołowa
+			\item \textbf{11.: Sugerowane kończenie projektów}
+			\item 12.: Praca zespołowa
+			\item 13.: Praca zespołowa
+			\item 14.: Praca zespołowa
+			\item \textbf{15.: Ostateczny termin oddania projektu}
+		\end{itemize}
+	\end{multicols}
+
+\end{document}

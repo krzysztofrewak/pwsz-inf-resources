@@ -1,0 +1,10 @@
+{
+	"autoload": {
+		"psr-4": {
+			"ParkingLotManager\\": "src/"
+		}
+	},
+	"require": {
+		"php": ">=7.1"
+	}
+}

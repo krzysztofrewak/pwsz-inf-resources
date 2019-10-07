@@ -1,0 +1,64 @@
+\documentclass{article}
+
+\usepackage[OT4]{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage[left=2cm,right=2cm,top=1.5cm,bottom=2cm,includeheadfoot,a4paper]{geometry}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{marginnote}
+\usepackage{hyperref}
+\usepackage{listings}
+
+\geometry{a4paper}
+\linespread{1.1}
+\frenchspacing
+\renewcommand{\arraystretch}{1.2}
+
+\title{
+	Projektowanie i programowanie obiektowe \\
+	\Huge{Refleksje}
+}
+\author{mgr inż. Krzysztof Rewak}
+\date{\today}
+
+\begin{document}
+	\maketitle
+	
+	\section{Refleksje w programowaniu obiektowym}
+	Należy uruchomić w dowolnym środowisku załączony program z katalogu \texttt{lab11}. Programy w obu językach wykonują dokładnie to samo zadanie.
+	
+	\subsection{Java}
+	W katalogu \texttt{lab11/java} znajduje się kod źródłowy aplikacji. Należy zbudować, skompilować i uruchomić projekt w dowolny sposób. Zalecane jest środowisko IntelliJ IDEA (dostępne dla studentów za darmo).
+	
+	\subsection{PHP}
+	W katalogu \texttt{lab10/php} znajduje się kod źródłowy aplikacji wymagającej autoloadera. Należy uruchomić komendę \texttt{composer install}, aby utworzyć katalog \texttt{vendor} z wymaganymi plikami. Aplikację uruchamia się poprzez polecenie \texttt{php index.php} w głównym katalogu. Zalecane jest środowisko PHPStorm (dostępne dla studentów za darmo).
+	
+	\subsection{Pytania do zadania}
+	Należy odpowiedzieć na następujące pytania dotyczące klas abstrakcyjnych:
+	\begin{itemize}
+		\item czym jest refleksja?
+		\item czy metoda wywołana przez refleksje musi być publiczna?
+		\item czy można refleksją wywołać metodę z innej klasy?
+		\item czy można refleksją wywołać coś więcej niż metodę po nazwie?
+		\item czy wykorzystywanie refleksji to dobra praktyka programistyczna?
+		\item jakie zagrożenia niesie ze sobą wykorzystywanie refleksji?
+		\item do czego można wykorzystać mechanizm refleksji?
+	\end{itemize}
+
+	\section{Zadanie programistyczne}
+	Należy zmodyfikować program, tak aby umożliwić zarządzanie prostym blogiem:
+	
+	\begin{itemize}
+		\item metoda \texttt{create} powinna utworzyć nowy (autoinkrementowany) post na blogu;
+		\item metoda \texttt{list} powinna wygenerować listę postów;
+		\item metoda \texttt{show} powinna wyświetlić dany post;
+		\item metoda \texttt{random} powinna wyświetlić losowy post;
+		\item metoda \texttt{delete} powinna usunąć (wszystkie posty? ostatni post? wybrany post?);
+		\item metoda \texttt{quit} powinna wyjść z programu;
+		\item blog powinien mieć możliwość zaimportowania repozytorium postów.
+	\end{itemize}
+	
+	Plik z programem należy dołączyć do repozytorium Git. Zalecane jest uporządkowanie zadań w odpowiadającym im katalogach.
+
+\end{document}

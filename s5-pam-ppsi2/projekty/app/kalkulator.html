@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Projektowanie i programowanie systemów internetowych II :: kalkulator ocen</title>
+		<meta charset="utf-8">
+
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&amp;subset=greek,latin">
+		<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
+
+		<style type="text/css">
+			* { font-family: "Roboto", sans-serif; }
+			html, body, #app { height: 100%; margin: 0; }
+			input { text-align: center; }
+			.ui.container { margin: 3em auto; }
+			.button { margin: .5em auto !important; }
+			[disabled] { opacity: 1 !important; }
+		</style>
+	</head>
+
+	<body>
+		<div id="app">
+			<div class="ui container">
+				<div class="ui secondary pointing menu">
+					<div class="item"><a href="./projekty.html">Projekty</a></div>
+					<div class="active item"><a href="./kalkulator.hmtl">Kalkulator ocen</a></div>
+				</div>
+
+				<h1 class="ui header">
+					Kalkulator ocen
+					<div class="sub header">Kalkulator ocen na Projektowanie i programowanie systemów internetowych II</div>
+				</h1>
+
+				<div class="ui divider"></div>
+
+				<div class="ui form">
+					<div class="fields">
+						<div class="field" v-for="partial in ['ks', 'k1', 'k2', 'k3']">
+							<label>{{ partial[0] }}<sub>{{ partial[1] }}</sub></label>
+							<input :placeholder="partial" type="text" v-model="getModel(partial)" disabled>
+							<div class="ui divider"></div>
+							<button class="ui fluid button" v-for="grade in availableGrades" :class="[grade.color, { basic: !isGradeSet(partial, grade.value) }]" @click="setGrade(partial, grade.value)">
+								{{ grade.value.toFixed(1) }}
+							</button>
+						</div>
+						<div class="field">
+							<label>k<sub>p</sub> = .5k<sub>1</sub> + .3k<sub>2</sub> + .2k<sub>3</sub> = {{ kp.toFixed(2) }}</label>
+							<input placeholder="Ω" type="text" v-model="round(kp)" disabled>
+						</div>
+						<div class="field">
+							<label>Ω = .5k<sub>s</sub> + .5k<sub>p</sub> = {{ omega.toFixed(2) }}</label>
+							<input placeholder="Ω" type="text" v-model="round(omega)" disabled>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			window.__lo_site_id = 137824;
+
+			(function() {
+				var wa = document.createElement('script'); wa.type = 'text/javascript'; wa.async = true;
+				wa.src = 'https://d10lpsik1i8c69.cloudfront.net/w.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wa, s);
+			})();
+
+			new Vue({
+				el: "#app",
+				data() {
+					return {
+						ks: 5.0,
+						k1: 5.0,
+						k2: 5.0,
+						k3: 5.0,
+						availableGrades: [
+							{ value: 2.0, color: "red" },
+							{ value: 3.0, color: "orange" },
+							{ value: 3.5, color: "orange" },
+							{ value: 4.0, color: "blue" },
+							{ value: 4.5, color: "blue" },
+							{ value: 5.0, color: "green" },
+						]
+					}
+				},
+				computed: {
+					kp() {
+						if(this.k1 === 2.0 || this.k2 === 2.0 || this.k3 === 2.0) {
+							return 2.0;
+						}
+
+						return .5 * this.k1 + .3 * this.k2 + .2 * this.k3;
+					},
+					omega() {
+						if(this.ks === 2.0 || this.kp === 2.0) {
+							return 2.0;
+						}
+
+						return (this.ks + this.kp) / 2;
+					}
+				},
+				methods: {
+					getModel(partial) {
+						return this[partial].toFixed(1)
+					},
+					setGrade(partial, value) {
+						this[partial] = value
+					},
+					isGradeSet(partial, value) {
+						return this[partial] === value
+					},
+					round(grade) {
+						return (Math.round(grade * 2) / 2).toFixed(1);
+					}
+				}
+			});
+		</script>
+	</body>
+</html>
+

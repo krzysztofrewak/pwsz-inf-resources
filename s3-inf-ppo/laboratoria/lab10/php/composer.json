@@ -1,0 +1,12 @@
+{
+    "autoload": {
+        "psr-4": {
+            "PPO\\Notebook\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.1",
+        "ext-readline": "*",
+        "cocur/slugify": "^3.1"
+    }
+}

@@ -1,0 +1,10 @@
+{
+	"autoload": {
+		"psr-4": {
+			"PPO\\Zoo\\": "src/"
+		}
+	},
+	"require": {
+		"php": ">=7.1"
+	}
+}

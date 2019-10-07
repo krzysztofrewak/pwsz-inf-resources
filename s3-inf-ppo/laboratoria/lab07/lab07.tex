@@ -1,0 +1,79 @@
+\documentclass{article}
+
+\usepackage[OT4]{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage[left=2cm,right=2cm,top=1.5cm,bottom=2cm,includeheadfoot,a4paper]{geometry}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{marginnote}
+\usepackage{hyperref}
+\usepackage{listings}
+
+\geometry{a4paper}
+\linespread{1.1}
+\frenchspacing
+\renewcommand{\arraystretch}{1.2}
+
+\title{
+	Projektowanie i programowanie obiektowe \\
+	\Huge{Interfejsy w programowaniu obiektowym}
+}
+\author{mgr inż. Krzysztof Rewak}
+\date{\today}
+
+\begin{document}
+	\maketitle
+
+	\section{Interfejsy w programowaniu obiektowym}
+	Należy uruchomić w dowolnym środowisku załączony program z katalogu \texttt{lab07}. Programy w obu językach wykonują dokładnie to samo zadanie.
+	
+	\subsection{Java}
+	W katalogu \texttt{lab07/java} znajduje się kod źródłowy aplikacji podzielonej na pakiety. Należy zbudować, skompilować i uruchomić projekt w dowolny sposób. Zalecane jest środowisko IntelliJ IDEA (dostępne dla studentów za darmo).
+	
+	\subsection{PHP}
+	W katalogu \texttt{lab07/php} znajduje się kod źródłowy aplikacji wymagającej autoloadera. Należy uruchomić komendę \texttt{composer install}, aby utworzyć katalog \texttt{vendor} z wymaganymi plikami. Aplikację uruchamia się poprzez polecenie \texttt{php index.php} w głównym katalogu. Zalecane jest środowisko PHPStorm (dostępne dla studentów za darmo).
+	
+	\subsection{Pytania do zadania}
+	Należy odpowiedzieć na następujące pytania dotyczące interfejsów:
+	\begin{itemize}
+		\item czym jest interfejs?
+		\item jakie metody musi implementować każda klasa, której obiekt będzie podjeżdżał pod bramę parkingu?
+		\item ile interfejsów może być zaimplementowych w jednej klasie?
+		\item czy interfejsy są dziedziczone?
+		\item co się stanie jeżeli pod bramę podjedzie czołg klasy \texttt{Tank}?
+		\item czy strażnik wpuści dwa samochody o takim samym numerze rejestracyjnym? A powinien?
+	\end{itemize}
+	
+	
+	A także dotyczące technikaliów:
+	\begin{itemize}
+		\item jak działają przestrzenie nazw w PHP i pakiety w Javie?
+		\item czy podział programu w konwencji \emph{jedna klasa - jeden plik} jest czytelny?
+		\item dlaczego w pliku \texttt{.gitignore} dodano foldery \texttt{.idea} oraz \texttt{vendor} dla PHP i \texttt{out} dla Javy?
+	\end{itemize}
+
+	\section{Zadanie programistyczne}
+	Należy rozszerzyć program tak, aby przedstawić znajomość zagadnień przedstawianych na dotychczasowych zajęciach (dziedziczenie oraz interfejsy), a także z poprzednich (pola i metody, konstruktory, enkapsulacja, hermetyzacja).
+	
+	\begin{itemize}
+		\item generator kolejki powinien być konfigurowalny, tak, aby generować \emph{rozsądnie losowe} zestawy danych;
+		\item generator powinien uruchomić się kilkukrotnie \emph{w ciągu dnia};
+		\item każde wejście powinno zostać odnotowane razem z czasem wejścia;
+		
+		\item parking ma określony limit miejsc parkingowych, zatem parkingowy nie powinien wpuścić więcej samochodów niż ma miejsc;
+		\item parking powinien być płatny, analogicznie do parkingu przy kampusie; pracownicy uczelni wjeżdżają bez opłat (chciałbym!), natomiast prawie wszyscy inni płacą określoną cennikiem sumę;
+		\item na kampus mogą wjechać bez opłat samochody dostawcze kurierów oraz pojazdy uprzywilejowane, ale nie wliczają się do liczby zajętych miejsc parkingowych;
+		\item na kampus mogą wjechać bez opłat rowerzyści, ale jedynie w liczbie nieprzekraczającej określonej liczby stojaków na rowery;
+		\item na kampus nie mogą wjechać czołgi, ponieważ są zbyt szerokie;
+		
+		\item na koniec dnia wyświetlana jest uzbierana przez parkingowego kwota;
+		\item parkingowy posiada \emph{czarną listę} tablic rejestracyjnych, których właścicieli nie wpuszcza na teren parkingu;
+	\end{itemize}
+	
+	Plik z programem należy dołączyć do repozytorium Git. Zalecane jest uporządkowanie zadań w odpowiadającym im katalogach. Prezesłany program zostanie oceniony, a ocena będzie częścią składową oceny semestralnej.
+	
+	\subsection{Zadanie dla ambitnych}
+	Należy zastanowić się jak sensownie zaimplementować mechanizm wypuszczania obiektów z parkingu. Idealnym wyjściem byłoby, gdyby o godzinie 23:00 kampus był pusty, a więc wypadałoby zmusić wszyskich - za wyjątkiem pracowniczych samochodów z wykupionym abonamentem na nocne parkowanie - do opuszczenia terenu. 
+
+\end{document}

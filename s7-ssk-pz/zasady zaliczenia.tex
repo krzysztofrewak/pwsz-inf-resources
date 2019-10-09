@@ -1,0 +1,91 @@
+\documentclass{article}
+
+\usepackage[OT4]{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage[left=2cm,right=2cm,top=1.5cm,bottom=2cm,includeheadfoot,a4paper]{geometry}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{easylist}
+\usepackage{marginnote}
+
+\geometry{a4paper}
+\linespread{1.0}
+\frenchspacing
+\renewcommand{\arraystretch}{1.4}
+
+\title{
+	Projekt zespołowy \\
+	\Huge{Zajęcia wstępne}
+}
+\author{mgr inż. Krzysztof Rewak}
+\date{\today}
+
+\begin{document}
+	\maketitle
+
+	\section{Warunki zaliczenia}
+	Zaliczenie zajęć projektowych kursu \textbf{Projekt zespołowy} odbywa się poprzez opracowanie projektu programistycznego i sprawozdania oraz prezentację pracy projektowej. Ocena końcowa $\Omega$ będzie wyliczana w następujący sposób:
+	
+	\begin{equation} \Omega = 0.6 k_1 + 0.2 k_2 + 0.2 k_3 \label{omega} \end{equation}
+	
+	gdzie kolejne $k_n$ powinny być rozumiane następująco:
+	
+	\begin{itemize}
+		\item $k_1$ - ocena za pracę projektową;
+		\item $k_2$ - ocena za sprawozdanie z pracy projektowej;
+		\item $k_3$ - ocena za prezentację pracy projektowej.
+	\end{itemize}
+	
+	\subsection{Praca projektowa}
+	Należy zaprojektować i zaimplementować projekt programistyczny wedle własnego pomysłu lub wybrany spośród proponowanych tematów w punkcie 2. tego dokumentu. Warunki zaliczenia kształtują się następująco:
+	
+	\begin{itemize}
+		\item projekt jest wykonywany w grupach, dwu- lub trzysobowych;
+		\item temat projektu musi zostać zatwierdzony (również eksternistycznie) przez prowadzącego zajęcia najpóźniej do terminu trzeciech zajęć;
+		\item projekt może być wykonany w jednej z trzech form: jako aplikacja desktopowa, webowa lub mobilna;
+		\item projekt może być wykonany w dowolnym języku lub językach programowania, z wykorzystaniem dowolnych bibliotek, komponentów lub wtyczek;
+		\item aplikacja projektowa powinna być wyposażona w graficzny interfejs użytkownika.
+	\end{itemize}
+	
+	\subsection{Sprawozdanie z pracy projektowej}
+	Należy opracować sprawozdanie z pracy projektowej. Warunki zaliczenia kształtują się następująco:
+	
+	\begin{itemize}
+		\item zgodnie z ogólnie przyjętami standardami naukowymi, sprawozdanie powinno być skonstruowane w technologii \LaTeX;
+		\item sprawozdanie musi być dostarczone najpóźniej w dniu oddania całego projektu;
+		\item sprawozdanie powinno zawierać (jako rozdziały lub sekcje):
+		\begin{itemize}
+			\item opis funkcjonalny systemu;
+			\item streszczenie opisu technicznego;
+			\item instrukcję uruchomienia programu;
+			\item wnioski z projektu.
+		\end{itemize}
+	\end{itemize}
+	
+	\subsection{Prezentacja pracy projektowej}
+	Należy przestawić całym zespołem efekty swojej pracy. Prezentacja może odbyć się w formie przedstawienia działającej aplikacji, krótkiej prezentacji multimedialnej lub innej formy. Ostatnim etapem prezentacji będą pytania od prowadzącego zajęcia.
+	
+	\section{Przykładowe tematy prac projektowych}
+	\begin{itemize}
+		\item system rezerwacji biletów w kinie;
+		\item system do tworzenia i uzupełniania ankiet;
+		\item system zarządzania hotelem;
+		\item system zarządzania domowymi funduszami;
+		\item system do zarządzania treścią online na stronie www;
+		\item system do zapisywania i oceniania przeczytanych książek;
+		\item system do zarządzania magazynem;
+		\item system informacyjny wykorzystujący zewnętrzne API;
+		\item system do harmonogramowania pracy w zakładzie produkcyjnym.
+	\end{itemize}
+
+\begin{thebibliography}{9}	
+	\bibitem{martin} 
+	Robert C. Martin.
+	\textit{Czysty kod. Podręcznik dobrego programisty}. 
+	Wydawnictwo Helion, 2010.
+\end{thebibliography}
+
+
+
+\end{document}

@@ -23,6 +23,8 @@
 	\includegraphics[width=.95\textwidth]{api2.png}
 \end{frame}
 
+\section{Testy manualne}
+
 \begin{frame}{Testowanie manualne}
 	Testowanie manualne jest \emph{najprostszym} sposobem testowania oprogramowania i polega na ręcznym przeklikaniu aplikacji w celu znalezienia błędów.
 \end{frame}
@@ -77,7 +79,7 @@ public function testDividingFunction(): void {
 \begin{lstlisting}
 public function testDividingFunction(): void {
     $this->assertEquals(Math::divide(1.0, 2.0), 0.5);
-    $this->assertEquals(Math::divide(2.0, 4.0), 2.0);
+    $this->assertEquals(Math::divide(4.0, 2.0), 2.0);
 }
 \end{lstlisting}
 \end{frame}
@@ -88,7 +90,7 @@ public function testDividingFunction(): void {
 \begin{lstlisting}
 public function testDividingFunction(): void {
     $this->assertEquals(Math::divide(1.0, 2.0), 0.5);
-    $this->assertEquals(Math::divide(2.0, 4.0), 2.0);
+    $this->assertEquals(Math::divide(4.0, 2.0), 2.0);
     $this->expectException(DoNotDivideByZeroException::class);
     Math::divide(1.0, 0.0);
 }
@@ -101,7 +103,7 @@ public function testDividingFunction(): void {
 \begin{lstlisting}
 public function testDividingFunction(): void {
     $this->assertEquals(Math::divide(1.0, 2.0), 0.5);
-    $this->assertEquals(Math::divide(2.0, 4.0), 2.0);
+    $this->assertEquals(Math::divide(4.0, 2.0), 2.0);
     $this->assertNotEquals(Math::divide(2.0, 4.0), 1.0);
     $this->expectException(DoNotDivideByZeroException::class);
     Math::divide(1.0, 0.0);

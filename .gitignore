@@ -16,5 +16,13 @@
 *.gz
 *.toc
 *.vrb
+*.vs
+*.suo
+*.user
+*.pdb
+_ReSharper.*
+bin
+obj
+packages
 
 */.idea

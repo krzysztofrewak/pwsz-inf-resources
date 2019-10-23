@@ -26,24 +26,29 @@
 	\maketitle
 
 	\section{Hermetyzacja w programowaniu obiektowym}	
-	Należy uruchomić w dowolnym środowisku załączony program z pliku \texttt{lab04.*}. Programy w obu językach wykonują dokładnie to samo zadanie: tworzą instancję prostej pseudogry planszowej i przeprowadzają jedną rozgrywkę.
+	Należy uruchomić w dowolnym środowisku załączony program z katalogu \texttt{s3-inf-ppo\textbackslash laboratoria\textbackslash lab04}. Programy we wszystkich językach wykonują dokładnie to samo zadanie: tworzą instancję prostej pseudogry planszowej i przeprowadzają jedną rozgrywkę.
 	
 	Należy przeanalizować kod, a następnie odpowiedzieć na pytania:
 	\begin{itemize}
 		\item jakie są zasady gry?
+		\item jaki jest domyślny modyfikator dostępu do pól i metod w wybranym języku?
+		\item lepiej użyć publicznego pola czy prywatnego pola z ustawionym getterem i setterem?
+		\item jaki jest cel używania modyfikatora \texttt{protected}?
+		\item czy enkapsujacja różni się od hermetyzacji?
 		\item czym jest metoda statyczna?
-		\item czym jest pętla \texttt{foreach()} w PHP?
+		\item czym jest pętla \texttt{foreach()}?
 		\item kiedy główna pętla gry się zatrzyma i jak działają wyjątki?
 		\item czy lepiej jest inicjować pola klasy przy deklaracji czy w konstruktorze?
-		\item czy się różni ten sam kod w C++ i PHP?
+		\item czy się różni ten sam kod w różnych językach?
 	\end{itemize}
 
 	\section{Gra}
-	Należy rozszerzyć program z grą tak, aby przedstawić znajomość zagadnień przedstawianych na dotychczasowych zajęciach; należą do nich idea programowania obiektowego, pola i metody, konstruktory i destruktory, hermetyzacja.
+	Należy rozszerzyć program z grą tak, aby przedstawić znajomość zagadnień przedstawianych na dotychczasowych zajęciach; należą do nich idea programowania obiektowego, pola i metody, konstruktory, hermetyzacja.
 	\begin{itemize}
-		\item do gry przy każdym uruchomieniu zostanie dodanych $n$ graczy; $3 \leq n \leq 10$; $n$ losowe lub konfigurowalne;
+		\item do gry przy każdym uruchomieniu zostanie dodanych $n$ graczy; $3 \leq n \leq 10$; $n$ losowe lub konfigurowalne; nazwy graczy powinny być sensownie losowane lub podawane z klawiatury;
 		\item kostka powinna mieć możliwość ustwienia liczby ścian przed dodaniem do gry;
-		\item gra powinna mieć możliwość ustawienia maksymalnej liczby pól.
+		\item gra powinna mieć możliwość ustawienia przed rozpoczęciem rozgrywki maksymalnej liczby pól;
+		\item gra powinna mieć możliwość ustawienia przed rozpoczęciem rozgrywki opcjonalnej maksymalnej liczby ruchów.
 	\end{itemize}
 
 	\subsection{Podpowiedzi i wskazówki}
@@ -56,7 +61,7 @@
 	Do programu należy dopisać następujące funkcjonalności, które zwiększą dynamikę gry:
 	\begin{itemize}
 		\item jeżeli gracz wyrzuci kostką liczbę $k = 1$, a znajdować się będzie na pozycji nieparzystej, wówczas pionek przesunie się do tyłu o $k'$ równemu nowemu rzutowi kostką;
-		\item jeżeli gracz wyrzuci kostką liczbę $k = k_{max}$, a znajdować się będzie na pozycji podzielnej przez 10, wówczas gracz otrzyma dodatkowy rzut kostką.
+		\item jeżeli gracz wyrzuci kostką liczbę $k = k_{max}$, a znajdować się będzie na pozycji podzielnej przez 7, wówczas gracz otrzyma dodatkowy rzut kostką.
 	\end{itemize}
 
 \end{document}

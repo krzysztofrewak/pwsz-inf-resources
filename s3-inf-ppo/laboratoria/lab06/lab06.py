@@ -21,8 +21,8 @@ while len(champions) > 1:
 
     attacker.attack(target)
     if target.life_points <= 0:
-        print target.name + " died."
+        print(target.name + " died.")
         champions.remove(target)
 
-print ""
-print "The winner is " + champions[0].name
+print("")
+print("The winner is " + champions[0].name)

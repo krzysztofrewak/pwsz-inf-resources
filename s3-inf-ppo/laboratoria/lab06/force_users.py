@@ -22,8 +22,8 @@ class ForceUser(object):
         drawnMovement = random.choice(self.available_movements)
         opponent.life_points -= drawnMovement.damage
 
-        print self.name + " attacks " + opponent.name + " with " + drawnMovement.name + "."
-        print opponent.name + " now has " + str(opponent.life_points) + " life points."
+        print(self.name + " attacks " + opponent.name + " with " + drawnMovement.name + ".")
+        print(opponent.name + " now has " + str(opponent.life_points) + " life points.")
 
 
 class LightsaberUser(ForceUser):

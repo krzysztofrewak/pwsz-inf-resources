@@ -1,90 +1,112 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Projektowanie i programowanie systemów internetowych II</title>
-		<meta charset="utf-8">
+<html lang="pl">
+    <head>
+        <title>Projektowanie i programowanie systemów internetowych II</title>
+        <meta charset="utf-8">
 
-		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-		<script type="text/javascript" src="./data/projects.js"></script>
-		<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&amp;subset=greek,latin">
-		<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script type="text/javascript" src="./data/projects.js"></script>
+        <link type="text/css" rel="stylesheet"
+              href="https://fonts.googleapis.com/css?family=Roboto&amp;subset=greek,latin">
+        <link type="text/css" rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
 
-		<style type="text/css">
-			* { font-family: "Roboto", sans-serif; }
-			html, body, #app { height: 100%; margin: 0; }
-			.ui.container { margin: 3em auto; }
-			.clickable { cursor: pointer; }
-			.inactive { opacity: .25; }
-		</style>
-	</head>
+        <style type="text/css">
+            * {
+                font-family: "Roboto", sans-serif;
+            }
 
-	<body>
-		<div id="app">
-			<div class="ui container">
-				<div class="ui secondary pointing menu">
-					<div class="active item"><a href="./projekty.html">Projekty</a></div>
-					<div class="item"><a href="./kalkulator.html">Kalkulator ocen</a></div>
-				</div>
+            html, body, #app {
+                height: 100%;
+                margin: 0;
+            }
 
-				<h1 class="ui header">
-					Zadania do wyboru
-					<div class="sub header">Zadania projektowe na Projektowanie i programowanie systemów internetowych II</div>
-				</h1>
+            .ui.container {
+                margin: 3em auto;
+            }
 
-				<div class="ui divider"></div>
+            .clickable {
+                cursor: pointer;
+            }
 
-				<transition-group name="flip-list" tag="div" class="ui four doubling cards">
-					<div class="card" v-for="project in computedProjects" :class="{ inactive: !project.active }" v-bind:key="project.title">
-						<div class="ui right corner label">
-							<i class="clickable outline square icon" @click="toggleStatus(project)" :class="{ check: !project.active }"></i>
-						</div>
-						<div class="image">
-							<img :src="getProjectImage(project)">
-						</div>
-						<div class="content">
-							<div class="header">
-								{{ project.title }}
-							</div>
-						</div>
-						<div class="extra content">
-							<div class="description">
-								<div v-for="feature in project.features">
-									<i class="green check icon"></i> {{ feature }}
-								</div>
-							</div>
-						</div>
-					</div>
-				</transition-group>
-			</div>
-		</div>
-		<script type="text/javascript">
-			new Vue({
-				el: "#app",
-				data() {
-					return {
-						projects: []
-					}
-				},
-				computed: {
-					computedProjects() {
-						return this.projects.sort(function(a, b) {
-							return (a.active === b.active)? 0 : a.active? -1 : 1;
-						})
-					}
-				},
-				methods: {
-					toggleStatus(project) {
-						project.active = !project.active;
-					},
-					getProjectImage(project) {
-						return "./assets/" + project.title + ".jpg";
-					},
-				},
-				mounted() {
-					this.projects = JSON.parse(JSON.stringify(sourceProjects))
-				},
-			});
-		</script>ł
-	</body>
+            .inactive {
+                opacity: .25;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="app">
+            <div class="ui container">
+                <div class="ui secondary pointing menu">
+                    <div class="active item"><a href="./projekty.html">Projekty</a></div>
+                    <div class="item"><a href="./kalkulator.html">Kalkulator ocen</a></div>
+                </div>
+
+                <h1 class="ui header">
+                    Zadania do wyboru
+                    <div class="sub header">Zadania projektowe na Projektowanie i programowanie systemów internetowych
+                        II
+                    </div>
+                </h1>
+
+                <div class="ui divider"></div>
+
+                <transition-group name="flip-list" tag="div" class="ui four doubling cards">
+                    <div class="card" v-for="project in computedProjects" :class="{ inactive: !project.active }"
+                         v-bind:key="project.title">
+                        <div class="ui right corner label">
+                            <i class="clickable outline square icon" @click="toggleStatus(project)"
+                               :class="{ check: !project.active }"></i>
+                        </div>
+                        <div class="image">
+                            <img :src="getProjectImage(project)">
+                        </div>
+                        <div class="content">
+                            <div class="header">
+                                {{ project.title }}
+                            </div>
+                        </div>
+                        <div class="extra content">
+                            <div class="description">
+                                <div v-for="feature in project.features">
+                                    <i class="green check icon"></i> {{ feature }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </transition-group>
+            </div>
+        </div>
+        <script type="text/javascript">
+            new Vue({
+                el: "#app",
+                data() {
+                    return {
+                        projects: []
+                    }
+                },
+                computed: {
+                    computedProjects() {
+                        return this.projects.sort(function (a, b) {
+                            return (a.active === b.active) ? 0 : a.active ? -1 : 1;
+                        })
+                    }
+                },
+                methods: {
+                    toggleStatus(project) {
+                        project.active = !project.active;
+                    },
+                    getProjectImage(project) {
+                        return "./assets/" + project.title + ".jpg";
+                    },
+                },
+                mounted() {
+                    this.projects = JSON.parse(JSON.stringify(sourceProjects))
+                },
+            });
+        </script>
+        ł
+    </body>
 </html>
 

@@ -1,6 +1,7 @@
 \documentclass{article}
 
-\usepackage[OT4]{polski}
+
+\usepackage{polski}
 \usepackage[utf8]{inputenc}
 \usepackage{indentfirst}
 \usepackage[left=2cm,right=2cm,top=1.5cm,bottom=2cm,includeheadfoot,a4paper]{geometry}
@@ -56,9 +57,10 @@
 	Należy rozszerzyć program:
 	
 	\begin{itemize}
-		\item zoo będzie posiadało więcej zwierząt: lwy, tygrysy, słonie, żyrafy, szympansy, delfiny, pingwiny, jeżozwierze;
-		\item pożywienie powinno być instancją nowej klasy zamiast stringiem;
-		\item pracownik zoo powiniem posiadać harmonogram karmienia zwierząt: o ósmej będzie chodził z mięsem, o dziewiątej z warzywami, itp.
+		\item zoo będzie posiadało więcej zwierząt: lwy, tygrysy, słonie, żyrafy, szympansy, rezusy, delfiny, pingwiny, wampiry, jeżozwierze, gekony, piranie, mrówkojady i rekiny; zaleca się zgrupowanie ich w mięsożerne, roślniożerne lub wszystkożerne, ale pozostawienie dodatkowej opcji na typowe dla jednego gatunku upodobania;
+		\item każde zwierzę powinno mieć ustalone odgórnie dla gatunku ramy czasu snu;
+		\item pożywienie powinno być rozumiane jako obiekty nowej klasy zamiast stringów jak jest to zaimplementowane teraz; zalecane jest wyjście od abstrakcyjnej klasy jedzenia, a następnie dziedziczenie w dół semantycznie;
+		\item pracownik zoo powiniem posiadać harmonogram karmienia zwierząt: o ósmej będzie chodził z mięsem, o dziewiątej z warzywami, itp. - pod warunkiem, że dane zwierzęta wówczas nie śpią!
 	\end{itemize}
 	
 	Plik z programem należy dołączyć do repozytorium Git. Zalecane jest uporządkowanie zadań w odpowiadającym im katalogach.

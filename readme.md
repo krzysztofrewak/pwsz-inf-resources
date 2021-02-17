@@ -14,7 +14,8 @@ Materiały będą uzupełniane i aktualizowane, również podczas semestru. Wsze
 * **Zaawansowane metody programowania**, semestr VI, laboratorium
 * **Projekt zespołowy (PAM)**, semestr VII, projekt
 * **Projekt zespołowy (SSK)**, semestr VII, projekt
-* **Visual Programming**, semestr II, wykład dla studentów programu Erazmus
+* **Visual Programming**, semestr II, wykład dla studentów programu Erasmus
+* **Progamming basics II**, semestr II, wykład dla studentów programu Erasmus
 
 ### Linki
 * [strona z materiałami, `pwsz.rewak.pl`](http://pwsz.rewak.pl/)
